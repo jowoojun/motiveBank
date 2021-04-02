@@ -29,8 +29,14 @@ class HomeScreen extends React.Component<Props, State> {
     this.setState({refreshing: true});
     
     this.accounts._getAccountData(4).then(() => {
-      this.setState({refreshing: false});
+      this.securities._getSecuritiesData(4).then(() => {
+        this.setState({refreshing: false});
+      })
     })
+  }
+
+  _refreshData = () => {
+    
   }
 
   render(){

@@ -61,14 +61,14 @@ class SecuritiesView extends React.Component<Props, State> {
       isLoading: false,
       totalMoney: 0,
     };
-    this._getAccountData = this._getAccountData.bind(this)
+    this._getSecuritiesData = this._getSecuritiesData.bind(this)
   }
 
   componentDidMount() {
-    this._getAccountData(4);
+    this._getSecuritiesData(4);
   }
 
-  _getAccountData = async (limit: number) => {
+  _getSecuritiesData = async (limit: number) => {
     this.setState({
       isLoading: true,
     });
