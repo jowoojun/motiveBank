@@ -6,6 +6,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import HomeScreen from '../screens/HomeScreen'
 import SettingScreen from '../screens/SettingScreen'
+import StockScreen from '../screens/StockScreen';
+import AccountScreen from '../screens/AccountScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -18,6 +20,10 @@ const AppNavigator = () => {
             let iconName;
             if (route.name === 'Home') { // 아이콘의 이름 결정
               iconName = focused? 'home' : 'home-outline';
+            } else if (route.name === 'Account') {
+              iconName = focused ? 'calendar' : 'calendar-outline';
+            } else if (route.name === 'Stock') {
+              iconName = focused ? 'bar-chart' : 'bar-chart-outline';
             } else if (route.name === 'Settings') {
               iconName = focused ? 'settings' : 'settings-outline';
             }else{
@@ -33,6 +39,8 @@ const AppNavigator = () => {
         }}
       >
         <Tab.Screen name="Home" component={HomeScreen} /> 
+        <Tab.Screen name="Account" component={AccountScreen} /> 
+        <Tab.Screen name="Stock" component={StockScreen} /> 
         <Tab.Screen name="Settings" component={SettingScreen} options={{ tabBarBadge: 3 }}/>
       </Tab.Navigator>
     </NavigationContainer>
