@@ -1,4 +1,4 @@
-// src/screens/AccountView.tsx
+// src/screens/SecuritiesView.tsx
 import * as React from 'react';
 import {  StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -12,28 +12,28 @@ const defaultURL = "https://github.githubassets.com/images/modules/logos_page/Gi
 const sampleData = {
   data: [
     {
-      "id": "bitcoin",
-      "name": "Bitcoin",
-      "price_usd": "8195.6",
-      "iconUri": "https://github.com/cjdowner/cryptocurrency-icons/blob/master/32@2x/icon/btc@2x.png?raw=true"
+      "id": "XRP",
+      "name": "XRP",
+      "price_usd": "6358.12",
+      "iconUri": "https://github.com/cjdowner/cryptocurrency-icons/blob/master/32@2x/icon/xrp@2x.png?raw=true"
     },
     {
-      "id": "ethereum",
-      "name": "Ethereum",
-      "price_usd": "610.13",
-      "iconUri": "https://github.com/cjdowner/cryptocurrency-icons/blob/master/32@2x/icon/eth@2x.png?raw=true"
-    },
-    {
-      "id": "bitcoin cash",
-      "name": "Bitcoin Cash",
-      "price_usd": "50.13",
-      "iconUri": "https://github.com/cjdowner/cryptocurrency-icons/blob/master/32@2x/icon/bcc@2x.png?raw=true"
+      "id": "EOS",
+      "name": "EOS",
+      "price_usd": "2184.5",
+      "iconUri": "https://github.com/cjdowner/cryptocurrency-icons/blob/master/32@2x/icon/eos@2x.png?raw=true"
     },
     {
       "id": "litecoin",
       "name": "Litecoin",
-      "price_usd": "15.13",
+      "price_usd": "462.30",
       "iconUri": "https://github.com/cjdowner/cryptocurrency-icons/blob/master/32@2x/icon/ltc@2x.png?raw=true"
+    },
+    {
+      "id": "teslacoin",
+      "name": "Teslacoin",
+      "price_usd": "50.4",
+      "iconUri": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
     },
   ]
 };
@@ -53,7 +53,7 @@ interface AssetItemProps{
   iconUri: string
 }
 
-class AssetView extends React.Component<Props, State> {
+class SecuritiesView extends React.Component<Props, State> {
   constructor(props:Props) {
     super(props);
     this.state = {
@@ -106,7 +106,7 @@ class AssetView extends React.Component<Props, State> {
     return (
       <View style={styles.container}>
         <TouchableOpacity style={styles.accountSummaryContainer}>
-          <Text style={styles.accountText}>계좌</Text>
+          <Text style={styles.accountText}>증권</Text>
           <View style={styles.accountMoneyContainer}>
             <Text style={styles.accountMoeny}>{currencyFormat(this.state.totalMoney)}</Text>
             <Icon name="chevron-forward-outline" size={24} color="#666699" />
@@ -149,4 +149,4 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
   }
 });
-export default AssetView
+export default SecuritiesView

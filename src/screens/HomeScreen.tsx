@@ -7,6 +7,7 @@ import { getStatusBarHeight } from "react-native-status-bar-height";
 import TopBar from './components/home/TopBar';
 import TotalAssetButton from './components/home/TotalAssetButton';
 import AccountView from './components/home/AccountView';
+import SecuritiesView from './components/home/SecuritiesView';
 
 import { colors } from '../../constants/base';
 
@@ -17,6 +18,7 @@ interface State{
 
 class HomeScreen extends React.Component<Props, State> {
   accounts: any
+  securities: any
   constructor(props: Props){
     super(props)
     this.state = {
@@ -44,6 +46,8 @@ class HomeScreen extends React.Component<Props, State> {
           }>
           <TotalAssetButton />
           <AccountView style={styles.accountView} ref={ref => this.accounts = ref} />
+          <SecuritiesView style={styles.accountView} ref={ref => this.securities = ref} />
+          <View style={styles.footer}/>
         </ScrollView>
       </View>
     );
@@ -69,6 +73,9 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column', 
   },
+  footer:{
+    paddingBottom: 40
+  }
 });
 
 export default HomeScreen
